@@ -1,15 +1,15 @@
 # Fichier de configuration du site à personnaliser
 
 # Informations du site 
-site_name: Base MkDocs Material
-site_description: Exemple de site de base pour MkDocs avec le thème Material à personaliser
+site_name: Cours INF1
+site_description: Cours de INF1 avec le thème Material à personaliser
 site_author: "NewCesam" 
-copyright: Document partagé par <a href="https://github.com/ericECmorlaix" target="_blank">Eric MADEC</a> &copy; 2021 sous licence <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr" target="_blank">CC BY-NC-SA 4.0</a> <br> Illustrations par <a href="https://undraw.co/" target="_blank">UnDraw</a>
-site_url: https://ericecmorlaix.github.io/base_mkdocs_material/ #  modifier au format https://votrePseudoGitHub.github.io/votreDepot/
+copyright: Document partagé par <a href="https://github.com/Wenmad" target="_blank">NewCesam</a> &copy; 2021 sous licence <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr" target="_blank">CC BY-NC-SA 4.0</a> <br> Illustrations par <a href="https://undraw.co/" target="_blank">UnDraw</a>
+site_url: https://wenmad.github.io/Cours_INF1/ #  modifier au format https://votrePseudoGitHub.github.io/votreDepot/
 
 # Dépot du projet 
-repo_name: 'base_mkdocs_material' 
-repo_url: https://github.com/ericECmorlaix/base_mkdocs_material # Ajoute l'icone et le lien vers le dépot GitHub en haut à droite pour afficher et permettre d'éditer le fichier source
+repo_name: 'Cours_INF1' 
+repo_url: https://github.com/Wenmad/Cours_INF1 # Ajoute l'icone et le lien vers le dépot GitHub en haut à droite pour afficher et permettre d'éditer le fichier source
 edit_uri: tree/main/docs/
 
 
