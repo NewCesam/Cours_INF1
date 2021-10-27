@@ -18,8 +18,11 @@ docs_dir: docs
 
 # Menu de navigation
 nav: 
-    - La page d'accueil : index.md
-    - Un notebook jupyter : Notebook.ipynb
+    - Accueil : index.md
+    - Cours Algorithmique : Cours_Algo.md
+    - TD Algorithmique : TD_Algo.md
+    - Cours Python : Cours_PYTHON.ipynb
+    - TD/TP Python : TD_TP_PYTHON.ipynb
 
 
     # Référencer vos autres pages ci-dessus...
@@ -36,14 +39,14 @@ theme:
 
     palette: # Palettes de couleurs jour/nuit, cf : https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/
       - scheme: default # nom du thème clair
-        primary: lime # couleur primaire des titres, des liens, ..., à prendre dans la liste
-        accent: amber # couleur d'accentuation au survol des boutons, desliens, ..., à prendre dans la liste
+        primary: light blue # couleur primaire des titres, des liens, ..., à prendre dans la liste
+        accent: deep orange # couleur d'accentuation au survol des boutons, desliens, ..., à prendre dans la liste
         toggle: # définition du bouton pour switcher de palette
           icon: material/weather-sunny # apparence
           name: Basculer en mode sombre # message
       - scheme: slate # nom du thème sombre
-        primary: amber
-        accent: lime
+        primary: deep orange
+        accent: light blue
         toggle:
           icon: material/weather-night
           name: Basculer en mode clair
@@ -103,14 +106,14 @@ plugins:
 extra:
   social: # A personaliser...
     - icon: fontawesome/solid/paper-plane
-      link: mailto:eric.madec@ecmorlaix.fr
+      link: mailto:newcesam@gmail.com
       name: Pour toute question, suggestion ou commentaire, écrire à l'auteur
     - icon: fontawesome/brands/github
-      link: https://github.com/ericECmorlaix/base_mkdocs_material
+      link: https://github.com/Wenmad/Cours_INF1
       name: dépôt github
     - icon: fontawesome/solid/university
-      link: https://www.ecmorlaix.fr/nos-etablissements/lycee-notre-dame-du-mur/
-      name: Lycée Notre Dame du Mur
+      link: https://www.utc.fr/
+      name: UTC
 
 
 extra_javascript:
