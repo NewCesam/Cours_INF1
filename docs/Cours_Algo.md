@@ -44,7 +44,7 @@ Test :
                 <instruction>
         ??? attention
             - La variable de boucle doit être scalaire (entier, énuméré, intervalle ou caractère)
-            - <instruction> peut être un bloc de plusieurs instructions
+            - `<instruction>` peut être un bloc de plusieurs instructions
             - Si x > y , il n'y aura pas d'exécution
 
     **-Boucles à bornes indéfinies** :
