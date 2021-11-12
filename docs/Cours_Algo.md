@@ -95,5 +95,87 @@ Suite de caracères regroupés dans une même variable. Le type `string` en pyth
 - POSITION : `POSITION("sous-chaîne","chaîne")` renvoie la position d'une sous-chaîne dans une chaîne
 - COPIE : `COPIE("chaîne source", début, longueur)` renvoie une sous-chaîne de longueur donnée à partir d'une position donnée
 
-    
+## Récursivité
+Une fonciton ou une procédure est dite récursive s'il est faiat appel à cette fonction ou à cette procédure dans le corps d'instructions qui la définit : la fonction ^^s'appelle elle-même^^
 
+    x ancêtre de y
+    si x parent de z
+    et z ancêtre de y
+    ou x parent de z
+
+??? example "Exemples"
+    factorielle (déf itérative) :
+    n! = n*(n-1)* ... *1
+
+    Mais aussi (déf récursive): 
+    n! = n*(n-1)!
+    
+        si (n>1)
+            alors
+                factorielle <--- n*facrtorielle(n-1)
+            sinon
+                factorielle <--- 1
+
+### Exemples
+
+- Somme des n premiers nombres :
+
+Algorithme itératif :
+
+    variables
+        i : entier
+        sum : entier long
+
+    début
+        sum <--- 0
+        pour i variant de 1 à N faire
+            sum <--- sum + i
+    fin
+
+Algorithme récursif :
+
+    si n = 0
+        alors
+            somme <--- somme <--- 0
+        sinon somme <--- somme(n-1) + n
+
+    ##S(n) = S(n-1) + n
+    ##S(0) = 0        ##pour la condition d'arrêt
+
+- Saisie de phrase :
+
+    constante
+        POINT = "."
+    variable
+        car : caractère
+
+    faire :
+        début
+            lire(car)
+            si (car)
+            ...
+
+- Exemple de récursivité croisée/double : les fonctions cos(x) et sin(x)
+sin(x) = x quand x tend vers 0
+sin(x) = 2 * sin(x/2) * cos(x/2)
+
+cos(x) = 1 quand x tend vers 1
+cos(x) = cos²(x/2) - sin²(x/2)
+
+^^Algorithme à finir^^
+
+- Tours de Hanoï
+But : déplacer la pile de la tour 1 à la tour 3, en ne déplaçant qu'un disque à la fois, et en s'assuant qu'aucun disque ne repose sur un disque de plus petite dimension.
+
+Hypothèse : on veut déplacer la pile des n-1 premiers disques de la tour 1 à la tour 2
+Action : Déplacer le dernier disque de la tour 1 à la tour 3
+Ensuite : il ne reste plus qu'à déplacer les n-1 disques de la tour 2 à la tour 3
+Condition d'arrêt : nb disques = 0
+
+    Hanoi (nb_disques, T_orig, T_inter, T_dest : entiers) :
+        début
+            si (nb_disques > 0)
+                alors
+                    Hanoi(nb_disques - 1, T_orig, T_inter, T_dest)
+                    afficher("Déplacer le disque de ", T_orig, "à", T_dest)
+                    Hanoi(nb_disques - 1, T_inter, T_dest, T_orig)
