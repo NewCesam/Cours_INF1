@@ -144,16 +144,16 @@ Algorithme récursif :
 
 - Saisie de phrase :
 
-    constante
-        POINT = "."
-    variable
-        car : caractère
+        constante
+            POINT = "."
+        variable
+            car : caractère
 
-    faire :
-        début
-            lire(car)
-            si (car)
-            ...
+        faire :
+            début
+                lire(car)
+                si (car)
+                ...
 
 - Exemple de récursivité croisée/double : les fonctions cos(x) et sin(x)
 sin(x) = x quand x tend vers 0
@@ -179,3 +179,22 @@ Condition d'arrêt : nb disques = 0
                     Hanoi(nb_disques - 1, T_orig, T_inter, T_dest)
                     afficher("Déplacer le disque de ", T_orig, "à", T_dest)
                     Hanoi(nb_disques - 1, T_inter, T_dest, T_orig)
+
+## Enregistrement
+Comment modéliser une entité ayant plusieurs caractéristiques ?
+
+Une variable de type Objet(ou Classe) est une variable structurée avec plusieurs champs.
+Les champs sont les attributs ou caractéristiques de l'enregistrement.
+
+!!! attention
+    Tableau : éléments de même type
+    Objet : les champs peuvent être de type diff
+
+
+    type
+    Objet Voiture
+        marque : chaine
+        cylindre : réel
+        couleur : chaîne
+
+    auto.marque <-"Renault"
