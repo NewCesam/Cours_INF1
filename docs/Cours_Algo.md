@@ -191,10 +191,78 @@ Les champs sont les attributs ou caractéristiques de l'enregistrement.
     Objet : les champs peuvent être de type diff
 
 
-    type
-    Objet Voiture
-        marque : chaine
-        cylindre : réel
-        couleur : chaîne
+            
+        type
+            Objet Voiture
+                marque : chaine
+                cylindre : réel
+                couleur : chaîne
+                
+        variable
+            auto : Voiture
 
-    auto.marque <-"Renault"
+        auto.marque <-"Renault"
+
+??? example "Représenter un tableau et sa taille"
+
+        type
+            Objet Table
+                elements: tableau[1..NMAX] de réels
+                taille : integer;
+        Variables : T:Table
+
+        pour i variant de 1 à T.taille faire
+            lire(T.elements[i]);
+    
+??? tips "Un champ peut-être un enregistrement"
+
+        type
+            objet LIEU
+                rue: chaîne
+                code_postal: chaîne
+                ville: chaîne
+            
+            objet SITE
+                nom: chaîne
+                adresse : LIEU
+            
+            objet UNIVERSITE
+                nom: chaîne
+                liste_sites: tableau[1..NMAX] de SITE
+        
+        Variables :
+            univ: UNIVERSITE
+
+        univ.sites[1].nom                #accès au nom du premier site
+        univ.liste_sites[2].adresse.rue  #accès à la rue du 2ème site
+
+??? example "Tableau d'enregistrements"
+    
+        type
+            Objet UN_RESULTAT
+                nom, prenom: chaîne
+                median, final: réel
+                TP: tableau[1..MAXTP] de réel
+
+            Resultats=tableau[1..NBMAX] de UN_RESULTAT
+        Variables
+            tabResult: Resultats N
+
+        tabResult[3].median              #accès à la note du médian du troisième étudiant
+        tabResult[i].TP[j]               #accès à la jème note du ième étudiant
+
+# Ensembles
+
+## Opérateurs
+
+**Union** :
+: Symbole `+`
+??? example "Exemple"
+
+**Intersection** :
+: Symbole `*`
+??? example "Exemple"
+
+**Différence** :
+: Symbole `-`
+??? example "Exemple"
