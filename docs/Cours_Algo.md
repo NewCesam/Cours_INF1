@@ -96,7 +96,7 @@ Suite de caracères regroupés dans une même variable. Le type `string` en pyth
 - COPIE : `COPIE("chaîne source", début, longueur)` renvoie une sous-chaîne de longueur donnée à partir d'une position donnée
 
 ## Récursivité
-Une fonciton ou une procédure est dite récursive s'il est faiat appel à cette fonction ou à cette procédure dans le corps d'instructions qui la définit : la fonction ^^s'appelle elle-même^^
+Une fonction ou une procédure est dite récursive s'il est faiat appel à cette fonction ou à cette procédure dans le corps d'instructions qui la définit : la fonction ^^s'appelle elle-même^^
 
     x ancêtre de y
     si x parent de z
