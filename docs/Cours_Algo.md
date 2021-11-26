@@ -271,9 +271,9 @@ Les champs sont les attributs ou caractéristiques de l'enregistrement.
         tabResult[3].median              #accès à la note du médian du troisième étudiant
         tabResult[i].TP[j]               #accès à la jème note du ième étudiant
 
-# Ensembles
+## Ensembles
 
-## Opérateurs
+### Opérateurs
 
 **Union** :
 : Symbole `+`
@@ -286,3 +286,72 @@ Les champs sont les attributs ou caractéristiques de l'enregistrement.
 **Différence** :
 : Symbole `-`
 ??? example "Exemple"
+
+## Algorithmes de tri
+Problème : trier un tableau d'éléments de même type, muni d'une relation d'ordre
+### Tri par sélection
+- On suppose qu'on connaît le nb d'éléments
+- on cherche le min
+- on le place en premier
+- on cherche le minimum suivant
+- on le place en deuxième
+- ...
+
+    8 12 5 35 21 `3`  
+    3 12 `5` 35 21 8  
+    3 5 12 35 21 `8`  
+    ........................  
+
+        pour i allant de 1 à n-1 faire
+            min <--- T[i]
+            indiceMin <--- i
+            pour j allant de i+1 à n faire
+                si T[j] < min
+                    alors
+                        min <--- T[j]
+                        indiceMin <--- j
+            Echanger T[i] et T[indiceMin]
+
+Version récursive :
+
+        Tri(i,n) :
+            début
+                si i<= n-1
+                    alors
+                        min <--- T[i]
+                        indiceMin <--- i
+                        pour j allant de i+1 à n faire
+                            si T[j] < min
+                                alors
+                                    min <--- T[j]
+                                    indiceMin <--- j
+                        Echanger T[i] et T[indiceMin]
+                        Tri(i+1,n)
+            fin
+
+### Tri par insertion
+
+        pour i allant de 1 à n-1 faire
+            début
+                elt <--- T[i+1]
+                k <--- i
+                tant que (elt < T[k]) et (k >= 1) faire
+                    T[k+1] <--- T[k]
+                    k <--- k-1
+                T[k+1] <--- elt
+            fin
+
+### Tri par échange (tri à bulles)
+On échange les éléments 2 à 2 en les réordonnant, les éléments mal classés remontent dans la liste comme des bulles à la surface d'un liquide. L'éfficacité dépend du tableau initial, efficace si le tableau est presque trié
+
+        nbElts <--- n
+        echange <--- vrai
+        tant que echange faire
+            echange <--- faux
+            max <--- nbElts
+            pour i allant de 1 à max-1 faire
+                si T[i] > T[i+1] alors
+                    echanger T[i] et T[i+1]
+                    echange <--- vrai
+                    nbElts <--- i
+        
