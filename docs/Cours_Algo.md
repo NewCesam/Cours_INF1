@@ -302,6 +302,7 @@ Problème : trier un tableau d'éléments de même type, muni d'une relation d'o
     3 5 12 35 21 `8`  
     ........................  
 
+??? abstract "Algorithme"
         pour i allant de 1 à n-1 faire
             min <--- T[i]
             indiceMin <--- i
@@ -312,7 +313,7 @@ Problème : trier un tableau d'éléments de même type, muni d'une relation d'o
                         indiceMin <--- j
             Echanger T[i] et T[indiceMin]
 
-Version récursive :
+??? abstract "Version récursive"
 
         Tri(i,n) :
             début

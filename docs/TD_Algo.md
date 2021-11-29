@@ -407,4 +407,177 @@
                     M_F <--- M_F/nb_eleve
                     moy <--- (M_M + M_P + M_F)/3
                     afficher("Moyenne    ", M_M,"    ",M_P,"    ",M_F,"    ",moy)
+=== "TD 10"
+    ##1.
+    On souhaite pouvoir gérer les amis de deux personnes données (associées à deux variables, A et B), sur le fameux réseau social « livre facial ». Le nombre maximum d’amis pris en compte est de 255. Un ami sera défini uniquement par un numéro, représentée par un entier. On aurait pu associer à ce numéro des caractéristiques associées, telles que nom, prénom, email, adresse, téléphone, mais nous ne vous le demandons pas (nous garderons donc simplement un numéro allant de 1 à 255, afin de simplifier le problème).
+    On peut à tout moment ajouter de nouveaux amis, ou en supprimer, pour chacune des deux personnes A et B. Bref, cet ensemble d’amis évolue constamment.  
 
+    1) Définir le type de données à utiliser et la déclaration de variables pour ce problème.
+    ??? abstract "Réponse"
+
+            Num : 1,...,255
+            AMIS : ensemble de num
+            A,B : AMIS
+    
+    2) Ecrire un algorithme pour ajouter un ami à l’une des deux personnes, A ou B.
+    ??? abstract "Réponse"
+        Ajouter Num à un ensemble A ou B :
+        x : ensemble (x=A ou x=B)
+
+            x <--- x + [Num]
+        (algo à compléter)
+
+    3) Ecrire un algorithme permettant de supprimer un ami l’une des deux personnes, A ou B
+    ??? abstract "Réponse"
+        Supprimer Num d'un ensemble A ou B
+
+            x <--- x - [Num]
+
+    4) Réaliser un algorithme utilisée pour trouver les amis communs aux deux personnes A et B.
+    ??? abstract "Réponse"
+
+            x <--- A*B   #x est l'intersection des deux ensembles
+        si l'on doit afficher :
+
+            pour i variant de 1 à 255 faire
+            (compléter)
+
+    5) Comment rechercher les amis d’une personne qui ne sont pas amis de l’autre ?
+    ??? abstract "Réponse"
+
+            x <--- A - B
+
+    ##2.
+    On souhaite pouvoir gérer des commandes de pizzas, dans une micro entreprise gérée par deux jeunes auto entrepreneurs sympathiques, mais sans beaucoup de moyens (Camille et Léon). Il n’y a que 4 types de pizzas possibles : Margarita, Regina, Reine, et Calzone. Le nombre maximum de commandes prises en compte chaque jour est de 255. Une commande sera définie uniquement par un numéro, représentée par un entier. On aurait pu associer à ce numéro des caractéristiques associées, telles que nom, prénom, email, adresse, téléphone du client, mais nous ne vous le demandons pas (nous garderons donc simplement un numéro allant de 1 à 255, afin de simplifier le problème).  
+    On peut à tout moment ajouter de nouvelles commandes, ou en supprimer, pour chacune des pizzas vendues par cette entreprise (Regina, Margarita, Reine et Calzone). Bref, cet ensemble de commandes évolue constamment, pour chaque type de pizzas. Un client pourra commander plusieurs types de pizzas lors d’une même commande (mais une seule pizza par type, le système ne sachant pas gérer le nombre d’exemplaires souhaités). Dans ce cas, le même numéro de commande sera utilisé pour chaque type de pizza.  
+
+    1) Définir le type de données à utiliser et la déclaration de variables pour ce problème.
+    ??? abstract "Réponse"
+        
+            Num : 1,...,255
+            COMMANDES : ensemble de Num
+            Reg, Marg, Rei, Cal : COMMANDES
+    
+    2) Ecrire un algorithme pour ajouter une commande de pizza (Reine, Regina, Margarita, Calzone).
+    ??? abstract "Réponse"
+        
+            afficher("Donner le numéro de commande")
+            lire(Num)
+            afficher("Voulez-vous une regina, tapez O ou N")
+            lire(rep)
+            si rep = "O"
+                alors
+                    Reg <--- Reg + [Num]
+            afficher("Voulez-vous une margarita, tapez O ou N")
+            lire(rep)
+            si rep = "O"
+                alors
+                    Marg <--- Marg + [Num]
+            afficher("Voulez-vous une reine, tapez O ou N")
+            lire(rep)
+            si rep = "O"
+                alors
+                    Rei <--- Rei + [Num]
+            afficher("Voulez-vous une calzone, tapez O ou N")
+            lire(rep)
+            si rep = "O"
+                alors
+                    Cal <--- Cal + [Num]
+
+            (plus simple avec un tableau d'ensemble et une boucle ...)
+            
+
+    3) Ecrire un algorithme permettant de supprimer une commande de pizza (Reine, Regina, …).
+    ??? abstract "Réponse"
+
+            afficher("Donner le numéro")
+            lire(Num)
+            Reg <--- Reg - [Num]
+            Marg <--- Marg - [Num]
+            Rei <--- Rei - [Num]
+            Cal <--- Cal - [Num]
+    
+    4) Ecrire un algorithme qui détermine l’ensemble des commandes dans lesquelles le client souhaite obtenir les 4 types de pizzas (même numéro de commande pour chacune des 4 pizzas).
+    ??? abstract "Réponse"
+
+            X <--- Marg * Reg * Rei * Cal
+            pour i variant de 1 à 255
+                si i dans X
+                    alors
+                        afficher i
+    
+    5) Comment rechercher les commandes passées pour avoir des Reginas et des Margaritas mais pas des Reines ni des Calzones ?
+    ??? abstract "Réponse"
+
+            X <--- Marg * Reg - Rei - Cal
+
+    ##3.
+    Vous partez en randonnée et votre sac à dos n’est toujours pas préparé. Vous avez développé un algorithme qui vous permet de contrôler le remplissage et le contenu de votre sac à dos.  
+    Votre algorithme présente les fonctionnalités suivantes :  
+   
+    1)Les objets que vous pouvez mettre dans votre sac à dos sont : sac_couchage, chaussures, gourde, chaussettes, linge, pain. Donnez la définition d’un type ensemble « objets » composé de tous ces éléments.
+    ??? abstract "Réponse"
+
+            objets : sac_couchage, chaussures, gourde, chaussettes, linge, pain
+            liste_objets : ensemble d'objets
+            sac : liste_objets
+
+    2) Donner un algorithme « remplir_sac ». Il vous permet de déposer des objets (parmi ceux définis dans « objets »). L’utilisateur peut arrêter ou continuer le remplissage du sac après avoir déposé un objet. Cet algorithme commence avec un sac vide et retourne un sac avec les objets déposés
+    ??? abstract "Réponse"
+        
+            remplir_sac :
+                Variables :
+                    obj : objets
+                    Sac : liste_objets
+                    rep : chaîne
+                Début
+                    sac <--- []
+                    répéter
+                        afficher("Voulez-vous ajouter des objets dans le sac ? Tapez O ou N")
+                        lire(rep)
+                        Afficher("Indiquer l'objet à ajouter")
+                        lire(obj)
+                        sac <--- sac + [obj]
+                    jusqu'à rep = N
+                    retourner sac
+                Fin
+                
+        (différent de la correction à consulter)
+
+    3) Donner un algorithme « affiche_sac » qui affiche à l’écran les objets présents dans le sac à dos. 
+    ??? abstract "Réponse"
+
+            affiche_sac :
+                Variables :
+                    i : objets
+                Début
+                    afficher("Dans le sac il y a les objets suivants")
+                    pour i variant dans liste_objets faire
+                        si i dans sac
+                            alors
+                                afficher("- ", i)
+                Fin
+                
+        (différent de la correction à consulter)
+
+    4) Donner un algorithme « vider_sac » qui permet de sortir un ou plusieurs objets du sac en fonction de votre demande et leur présence dans le sac. Cet algorithme commence avec un sac qui peut contenir des objets de l’ensemble « objets » et retourne le sac à dos sans les objets enlevés suivant le choix de l’utilisateur.         
+    ??? abstract "Réponse"
+
+            vider_sac :
+                Variables :
+                    rep : chaîne
+                    obj : objets
+                Début
+                    répéter
+                        afficher("Voulez-vous retirer un objets du sac ? Tapez O ou N")
+                        lire(rep)
+                        afficher("Quel objet voulez-vous retirer ?")
+                        lire(obj)
+                        si obj dans sac
+                            alors
+                                sac <--- sac - [obj]
+                            sinon
+                                afficher("Cet objet n'est pas dans le sac à dos")
+                    jusqu'à rep = N
+                Fin
+        (différent de la correction à consulter)
