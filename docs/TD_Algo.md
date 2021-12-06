@@ -372,8 +372,9 @@
             français : réel
     
     Ecrire un algorithme qui exploite ce tableau pour afficher la liste des étudiants avec leur note en Maths, en Physique, en Français, ainsi que leur moyenne.  
-    Par exemple, nous pourrions avoir les informations suivantes :  
-    (insérer image)
+    Par exemple, nous pourrions avoir les informations suivantes :    
+    ![Illustration](../images/TD9.png "Illustration")
+    
     On supposera que le nombre d’élèves est inférieur ou égal à 100.
 
     ??? abstract "Réponse"
@@ -581,3 +582,172 @@
                     jusqu'à rep = N
                 Fin
         (différent de la correction à consulter)
+    ##4.
+    La FFD (Fédération Française de Danse) souhaite pouvoir gérer les inscriptions aux compétitions de danse sportive. Il y a deux sortes de danses :
+        
+    - danses Latines (Samba, Cha Cha, Rumba, Paso Doble et Jive)
+    - danses Standards (Valse anglaise, Tango, Valse Viennoise, Slow Foxtrot et Quickstep).  
+     
+    Une manifestation sportive peut regrouper plusieurs compétitions (maximum 50), réparties par catégories d’âge (juvéniles, junior, youth, adultes, senior…) et des catégories de niveau : F, E, D, C, B, A, Open (toutes séries confondues). On a par exemple des compétitions en senior latines série B, open junior standards, adultes standards série C, Youth latines série E…   
+    Chaque compétition est identifiée par un numéro, compris entre 1 et 50. Les danseurs sont inscrits par couples, identifiés par leur numéro de dossard. Pour simplifier le problème, nous supposerons qu’il n’y a que 120 couples maximum dans une même manifestation sportive (en réalité, il y en a beaucoup plus…).   
+    Un couple est défini par son numéro de dossard, le nom et prénom du danseur et de la danseuse, leur classement national, leur classement international, l’adresse email du danseur et celle de la danseuse, leur série en danse standards et leur série en danses latines, leur catégorie d’âge…  
+    Les Couples peuvent être inscrits à une ou à plusieurs compétitions (par exemple Adulte latines série C, Open adultes standards, Open adultes latines, Adultes standards série B…)  
+    Bien entendu, une même compétition regroupe plusieurs couples (une centaine, au maximum).
+
+    1) Définir le type de données à utiliser et les déclarations de variables pour ce problème.
+    ??? abstract "Réponse"
+
+            Dossard : 1,...,120
+            Couple : enregistrement
+                Num_doss : Dossard
+                Nom_danseur, Nom_danseuse,Prenom_danseur,Prenom_danseuse : chaîne de caractères
+                mail_danseur,mail_danseuse : chaîne de caractères
+                classement_nat : entier
+                classement_internat : entier
+                serie_standars : chaîne de caractères
+                serie_latine : chaîne de caractères
+                categ_age : chaîne de caractères
+            Competition : enregistrement
+                Num : entier
+                categ_age : chaîne de caractères
+                serie : chaîne de caractaires
+                Inscrits : Ensemble de Dossard
+
+            Variables :
+                danseurs : tableau[1,...,120] de Couple
+                Competitions : tableau[1,...,50] de Competition
+
+    2) Ecrire un algorithme pour inscrire un couple (), à partir de son numéro de dossard) dans une compétition donnée (définie par son numéro)
+    ??? abstract "Réponse"
+
+            Input :
+                C : Couple
+                Numero : Num de competition
+            début
+                Competitions[Numero].Inscrits <--- Competitions[Numero].Inscrits + [C.Num_doss]
+
+    3) Ecrire un algorithme en PASCAL permettant de retirer un couple (pour cause de blessure, de désistement ou de disqualification) d’une compétition donnée, identifiée par son numéro. On utilisera son numéro de dossard du couple.
+    ??? abstract "Réponse"
+
+            Input :
+                X : Num_doss du couple
+                Num : Num de la compétition
+            début
+                Competitions[Num].Inscrits <--- Competitions[Num].Inscrits - [X]
+
+    4) Réaliser un algorithme en PASCAL pour rechercher le nom et prénom et adresse email des couples inscrits dans deux compétitions données. Par exemple, qui est à la fois en senior B latines (compétition n°5) et en Open senior Standards (compétitions n°36) ?
+    ??? abstract "Réponse"
+
+            Input :
+                A,B : entier
+
+            début :
+                X <--- Competitions[A].Inscrits * Competitions[B].Inscrits
+                pour i variant de 1 à 120 faire
+                    si i dans X
+                        alors
+                            afficher("Dossard :",i)
+                            afficher("Nom danseur :", Danseurs[i].Nom_danseur)
+                            afficher("Prénom danseur :", Danseurs[i].Prenom_danseur)
+                            afficher("Nom danseuse :", Danseurs[i].Nom_danseuse)
+                            afficher("Prénom danseuse :", Danseurs[i].Nom_danseuse)
+                            afficher("Mail danseur :", Danseurs[i].mail_danseur)
+                            afficher("Mail danseuse :", Danseurs[i].mail_danseuse)
+            fin
+    
+    5) Ecrire un algorithme en PASCAL pour rechercher les couples (nom, prénom et adresse email) inscrits dans une compétition mais pas dans une autre. Par exemple, qui est en senior B latines (compétition n°5) mais pas en Open senior Standards (compétitions n°36) ?
+    ??? abstract "Réponse"
+            
+            Input :
+                A,B : entier
+
+            début :
+                X <--- Competitions[A].Inscrits - Competitions[B].Inscrits
+                pour i variant de 1 à 120 faire
+                    si i dans X
+                        alors
+                            afficher("Dossard :",i)
+                            afficher("Nom danseur :", Danseurs[i].Nom_danseur)
+                            afficher("Prénom danseur :", Danseurs[i].Prenom_danseur)
+                            afficher("Nom danseuse :", Danseurs[i].Nom_danseuse)
+                            afficher("Prénom danseuse :", Danseurs[i].Nom_danseuse)
+                            afficher("Mail danseur :", Danseurs[i].mail_danseur)
+                            afficher("Mail danseuse :", Danseurs[i].mail_danseuse)
+            fin
+
+=== "TD 11"
+    ##1.
+    Tri d’une liste de nombres. On dispose de N valeurs numériques rangées dans un tableau pouvant contenir MAX valeurs. Il s’agit de ranger par ordre croissant ces N valeurs, soit dans le même tableau, soit dans un autre tableau. Par exemple, si on dispose au départ des 6 valeurs 7, 3, 1, 2, 5, 4, ils devront être rangés à la fin dans l’ordre 1, 2, 3, 4, 5, 7. On utilisera un algorithme simple, appelé tri de sélection, que l’on peut décrire de la manière suivante :  
+
+    On cherche le plus petit nombre et on le permute avec le nombre placé en première position, on cherche le plus petit des nombres restants et on le permute avec le nombre placé en seconde position,...  
+
+    Avec notre exemple cela donnerait ceci :  
+    ![Illustration d'une photo instantané](../images/TD11.png "Illustration")
+
+    L’algorithme demandé aura la structure suivante : lecture d’un tableau d’entiers, tri de ce tableau et affichage des nombres ainsi triés.
+    ??? abstract "Constantes"
+
+            Constantes :
+                MAX <--- 100
+
+    ??? abstract "Algorithme Saisie"
+
+            Algorithme Saisir(Tab:tableau d'entiers):entier
+                variable :
+                    i,n : entier
+                début
+                    répéter
+                        afficher("Donnez le nombre d'éléments")
+                        lire(n)
+                    tant que n<=0 ou n>MAX
+                    pour i variant de 1 à n faire
+                        afficher("Donnez l'élément n°", i)
+                        lire(T[i])
+                    retourner n
+                fin
+
+    ??? abstract "Algorithme Affichage"
+
+            Algorithme Afficher(Tab:tableau d'entiers, n:entier)
+                Variables :
+                    i:entier
+                début
+                    pour i variant de 1 à n faire
+                        afficher(Tab[i])
+                fin
+
+    ??? abstract "Algorithme de tri"
+
+            Algorithme Tri_Tableau(Tab:tableau d'entiers,n:entier)
+                Variables:
+                    i,j,indice_min,min:enier
+                début
+                    pour i variant de 1 à n-1 faire
+                        indice_min <--- i
+                        min <--- Tab[i]
+                        pour j variant de i+1 à n faire
+                            si Tab[j] < min
+                                alors
+                                    indice_min <--- j
+                                    min <--- Tab[j]
+                        Tab[indice_min] <--- Tab[i]
+                        Tab[i] <--- min
+                fin
+
+    ??? abstract "Saisie, Tri et Affichage"
+
+            Algorithme Saisir_Trier_Afficher
+                Variables:
+                    Tab : tableau d'entiers
+                    n : entier
+                début
+                    n <--- Saisir(Tab)
+                    Tri_Tableau(Tab,n)
+                    afficher(Tab,n)
+                    fin
+
+    ##2.
+    Tri d’une liste de chaînes de caractères. On souhaite à présent TRIER un tableau composé d’une liste de N noms ou prénoms de personnes de votre carnet d’adresses. Tous les noms et prénoms sont en MAJUSCULES non accentuées (rien en minuscule ou avec accents). On dispose d’un répertoire de max noms ou prénoms possibles (strings) rangés dans le tableau. Mais le nombre réel de données est N (avec N < MAX). Il s’agit de ranger, dans le même tableau, par ordre croissant, ces valeurs, selon l’ordre alphabétique (ou ordre lexicographique), les noms commençant par ‘A’ en premier, et ceux commençant par ‘Z’ en dernier… Par exemple, si on dispose au départ des 6 valeurs ‘ALAIN’, ‘MARIE, ‘FRANCOIS’, ‘PHILIPPE’, ‘SAMUEL’, ‘GWENN’, elles devront être rangées à la fin dans l’ordre valeurs ‘ALAIN’, ‘FRANCOIS’, ‘GWENN’, ‘MARIE, ‘PHILIPPE’, ‘SAMUEL’. On utilisera un algorithme simple, appelé tri de sélection, qui a été décrit dans le précédent exercice.
+
+    ??? abstract "Réponse"
+        Algorithme 1. à adapter, faire attention aux < selon le language de programmation
