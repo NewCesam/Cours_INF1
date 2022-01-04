@@ -9,7 +9,7 @@ Ceci est la page d'accueil du site de base généré avec le framework MkDocs et
 
 
 Si on a fait un bon choix, normalement il n'y aura que quelques lignes
-regardez y a presque rien !
-ça veut dire que vous avez mal réfléchi au départ, vous êtes en train de perdre du temps là c'est pas normal.
-le magret n'est pas très frais
+regardez y a presque rien !  
+ça veut dire que vous avez mal réfléchi au départ, vous êtes en train de perdre du temps là c'est pas normal.  
+le magret n'est pas très frais  
 Parfois les suggestions c'est économique
