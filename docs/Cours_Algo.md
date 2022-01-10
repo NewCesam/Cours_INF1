@@ -61,7 +61,7 @@ Test :
             Bien vérifier la condition de sortie pour éviter une boucle infinie
             
 ## Tableaux
-Une collection ^^ordonnée^^ d'éléments de même type. On accède à chaque élémet à l'aide d'un indice (2 indices pour un tableau à 2 dimensions).
+Une collection ^^ordonnée^^ d'éléments de même type. On accède à chaque élément à l'aide d'un indice (2 indices pour un tableau à 2 dimensions).
 
     <identificateur> = Tableau[type-index] de type-éléments
 
@@ -106,7 +106,7 @@ Une fonction ou une procédure est dite récursive s'il est fait appel à cette 
 ??? example "Exemples"
     ??? abstract "Factorielle"
         Déf itérative :
-        n! = n*(n-1)* ... *1
+        n! = n*(n-1) ... *1
 
         Déf récursive: 
         n! = n*(n-1)!
@@ -134,7 +134,7 @@ Une fonction ou une procédure est dite récursive s'il est fait appel à cette 
 
             si n = 0
                 alors
-                    somme <--- somme <--- 0
+                    somme <--- 0
                 sinon somme <--- somme(n-1) + n
 
             ##S(n) = S(n-1) + n
@@ -253,7 +253,7 @@ Les champs sont les attributs ou caractéristiques de l'enregistrement.
         Variables :
             univ: UNIVERSITE
 
-        univ.sites[1].nom                #accès au nom du premier site
+        univ.listes_sites[1].nom                #accès au nom du premier site
         univ.liste_sites[2].adresse.rue  #accès à la rue du 2ème site
 
 ??? example "Tableau d'enregistrements"
