@@ -109,38 +109,38 @@
 
     ??? abstract "Réponse"
 
-        date = enregistrement
-            jour : entier (1,31)
-            mois : entier (1,12)
-        Algorithme jour_du_lendemain
-            variables : 
-                d1,d2 : date
-                max_j : entier
-            début
-                Afficher("Donnez une date : jour et mois)
-                lire(d1.jour,d1.mois)
-                si(d1.mois = 2)
-                    alors
-                        max_j <--- 28
-                    sinon si (d1.mois est dans [1,3,5,7,8,10,12])
+            date = enregistrement
+                jour : entier (1,31)
+                mois : entier (1,12)
+            Algorithme jour_du_lendemain
+                variables : 
+                    d1,d2 : date
+                    max_j : entier
+                début
+                    Afficher("Donnez une date : jour et mois)
+                    lire(d1.jour,d1.mois)
+                    si(d1.mois = 2)
                         alors
-                            max_j <--- 31
-                        sinon
-                            max_j <--- 30
-                d2.jour <--- d1.jour + 1
-                si (d2.jour > max_j)
-                    alors
-                        d2.jour <--- 1
-                si (d2.jour = 1)
-                    alors
-                        d2.mois <--- d1.mois + 1
-                        si (d2.mois = 13)
+                            max_j <--- 28
+                        sinon si (d1.mois est dans [1,3,5,7,8,10,12])
                             alors
-                                d2.mois <--- 1
-                sinon
-                    d2.mois <--- d1.mois
-                Afficher("Le jour suivant est", d2.jour, d2.mois)
-            fin
+                                max_j <--- 31
+                            sinon
+                                max_j <--- 30
+                    d2.jour <--- d1.jour + 1
+                    si (d2.jour > max_j)
+                        alors
+                            d2.jour <--- 1
+                    si (d2.jour = 1)
+                        alors
+                            d2.mois <--- d1.mois + 1
+                            si (d2.mois = 13)
+                                alors
+                                    d2.mois <--- 1
+                    sinon
+                        d2.mois <--- d1.mois
+                    Afficher("Le jour suivant est", d2.jour, d2.mois)
+                fin
     Il faudrait compléter l'algorithme avec une fonction de vérification de la cohérence de la date
 
     ##2.
@@ -148,42 +148,42 @@
 
     ??? abstract "Réponse"
 
-        article = enregistrement
-            nom : chaîne
-            prix : réel
-        Algorithme
-            variables :
-                i, N, Taille, nb : entier
-                S, Tarif : réel
-            début
-                #Saisie des articles
-                afficher ("Combien y a-t-il d'article ?")
-                lire (N)
-                T : tableau de N article           
-                i <--- 0
-                répéter
-                    i <--- i + 1
-                    afficher("Nom de l'article :")
-                    lire(T[i].nom)
-                    afficher("Prix de l'article :")
-                    lire(T[i].prix)
-                tant que (T[i].prix > 0 et i <= N)
-                Taille <--- i - 1
+            article = enregistrement
+                nom : chaîne
+                prix : réel
+            Algorithme
+                variables :
+                    i, N, Taille, nb : entier
+                    S, Tarif : réel
+                début
+                    #Saisie des articles
+                    afficher ("Combien y a-t-il d'article ?")
+                    lire (N)
+                    T : tableau de N article           
+                    i <--- 0
+                    répéter
+                        i <--- i + 1
+                        afficher("Nom de l'article :")
+                        lire(T[i].nom)
+                        afficher("Prix de l'article :")
+                        lire(T[i].prix)
+                    tant que (T[i].prix > 0 et i <= N)
+                    Taille <--- i - 1
 
-                #Prix moyen
-                pour i variant de 1 à Taille 
-                    S <--- S + T[i].prix
-                afficher("Le prix moyen des articles est", S/Taille)
+                    #Prix moyen
+                    pour i variant de 1 à Taille 
+                        S <--- S + T[i].prix
+                    afficher("Le prix moyen des articles est", S/Taille)
 
-                #Recher articles sup
-                afficher ("Donnez un prix"
-                lire(Tarif)
-                nb <--- 0
-                pour i variant de 1 à Taille
-                    si(T[i].prix >= Tarif)
-                        alors
-                            nb <--- nb + 1
-                afficher(nb, "articles dont le prix est supérieur ou égal au tarif entré")
+                    #Recher articles sup
+                    afficher ("Donnez un prix"
+                    lire(Tarif)
+                    nb <--- 0
+                    pour i variant de 1 à Taille
+                        si(T[i].prix >= Tarif)
+                            alors
+                                nb <--- nb + 1
+                    afficher(nb, "articles dont le prix est supérieur ou égal au tarif entré")
 
     ##3.
     On dispose d’un tableau d’enregistrements ayant la structure suivante : nom, prénom, âge.  
@@ -192,28 +192,28 @@
 
     ??? abstract "Réponse"
 
-        etudiant = enregistrement
-            nom : chaîne
-            prenom : chaîne
-            age : entier
+            etudiant = enregistrement
+                nom : chaîne
+                prenom : chaîne
+                age : entier
         
-        Algorithme MENU
-            variables
-                choix : entier
-            début
-                répéter
-                    afficher("Tapez 1 : Stockage des informations des étudiants dans le tableau")
-                    afficher("Tapez 2 : Afficher l’ensemble du tableau (liste de tous les étudiants)")
-                    afficher("Tapez 3 : Ajout d’un étudiant")
-                    afficher("Tapez 4 : Recherche d’un étudiant")
-                    afficher("Tapez 5 : Suppression d’un étudiant")
-                    afficher("Tapez 6 : Modification d’un étudiant")
-                    afficher("Tapez 0 : Quitter")
+            Algorithme MENU
+                variables
+                    choix : entier
+                début
                     répéter
-                        afficher("Entrez votre choix")
-                        lire(choix)
-                    jusqu'à (choix >= 0 et choix <= 6)
-                jusqu'à choix = 0
+                        afficher("Tapez 1 : Stockage des informations des étudiants dans le tableau")
+                        afficher("Tapez 2 : Afficher l’ensemble du tableau (liste de tous les étudiants)")
+                        afficher("Tapez 3 : Ajout d’un étudiant")
+                        afficher("Tapez 4 : Recherche d’un étudiant")
+                        afficher("Tapez 5 : Suppression d’un étudiant")
+                        afficher("Tapez 6 : Modification d’un étudiant")
+                        afficher("Tapez 0 : Quitter")
+                        répéter
+                            afficher("Entrez votre choix")
+                            lire(choix)
+                        jusqu'à (choix >= 0 et choix <= 6)
+                    jusqu'à choix = 0
 
     b) Ecrire les algorithmes pour réaliser les actions suivantes :  
      1. Stockage de l’ensemble des étudiants dans le tableau  
