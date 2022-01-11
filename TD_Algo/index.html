@@ -1,0 +1,1487 @@
+<!-- Ajout pour le bouton de téléchargement et le style des jupyter notebook   https://github.com/danielfrg/mkdocs-jupyter -->
+
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Cours de INF1 avec le thème Material à personaliser">
+      
+      
+        <meta name="author" content="NewCesam">
+      
+      
+        <link rel="canonical" href="https://wenmad.github.io/Cours_INF1/TD_Algo/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.5">
+    
+    
+      
+        <title>TD Algorithmique - Cours INF1</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ee0f47ba.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="deep-orange">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href=".." title="Cours INF1" class="md-header__button md-logo" aria-label="Cours INF1" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="m278.9 511.5-61-17.7c-6.4-1.8-10-8.5-8.2-14.9L346.2 8.7c1.8-6.4 8.5-10 14.9-8.2l61 17.7c6.4 1.8 10 8.5 8.2 14.9L293.8 503.3c-1.9 6.4-8.5 10.1-14.9 8.2zm-114-112.2 43.5-46.4c4.6-4.9 4.3-12.7-.8-17.2L117 256l90.6-79.7c5.1-4.5 5.5-12.3.8-17.2l-43.5-46.4c-4.5-4.8-12.1-5.1-17-.5L3.8 247.2c-5.1 4.7-5.1 12.8 0 17.5l144.1 135.1c4.9 4.6 12.5 4.4 17-.5zm327.2.6 144.1-135.1c5.1-4.7 5.1-12.8 0-17.5L492.1 112.1c-4.8-4.5-12.4-4.3-17 .5L431.6 159c-4.6 4.9-4.3 12.7.8 17.2L523 256l-90.6 79.7c-5.1 4.5-5.5 12.3-.8 17.2l43.5 46.4c4.5 4.9 12.1 5.1 17 .6z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Cours INF1
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              TD Algorithmique
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="deep-orange"  aria-label="Basculer en mode sombre"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Basculer en mode sombre" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="light-blue"  aria-label="Basculer en mode clair"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Basculer en mode clair" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Effacer" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Wenmad/Cours_INF1/" title="Aller au dépôt" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Cours_INF1
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href=".." class="md-tabs__link">
+      Accueil
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../Cours_Algo/" class="md-tabs__link">
+      Cours Algorithmique
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  <li class="md-tabs__item">
+    <a href="./" class="md-tabs__link md-tabs__link--active">
+      TD Algorithmique
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../Cours_PYTHON/" class="md-tabs__link">
+      Cours Python
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../TD_TP_PYTHON/" class="md-tabs__link">
+      TD Python
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../TP_PYTHON/" class="md-tabs__link">
+      TP
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Cours INF1" class="md-nav__button md-logo" aria-label="Cours INF1" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="m278.9 511.5-61-17.7c-6.4-1.8-10-8.5-8.2-14.9L346.2 8.7c1.8-6.4 8.5-10 14.9-8.2l61 17.7c6.4 1.8 10 8.5 8.2 14.9L293.8 503.3c-1.9 6.4-8.5 10.1-14.9 8.2zm-114-112.2 43.5-46.4c4.6-4.9 4.3-12.7-.8-17.2L117 256l90.6-79.7c5.1-4.5 5.5-12.3.8-17.2l-43.5-46.4c-4.5-4.8-12.1-5.1-17-.5L3.8 247.2c-5.1 4.7-5.1 12.8 0 17.5l144.1 135.1c4.9 4.6 12.5 4.4 17-.5zm327.2.6 144.1-135.1c5.1-4.7 5.1-12.8 0-17.5L492.1 112.1c-4.8-4.5-12.4-4.3-17 .5L431.6 159c-4.6 4.9-4.3 12.7.8 17.2L523 256l-90.6 79.7c-5.1 4.5-5.5 12.3-.8 17.2l43.5 46.4c4.5 4.9 12.1 5.1 17 .6z"/></svg>
+
+    </a>
+    Cours INF1
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Wenmad/Cours_INF1/" title="Aller au dépôt" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Cours_INF1
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Accueil
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cours_Algo/" class="md-nav__link">
+        Cours Algorithmique
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          TD Algorithmique
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        TD Algorithmique
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    5.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    1.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    2.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    3.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    4.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    1.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    2.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    3.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4_2" class="md-nav__link">
+    4.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1_3" class="md-nav__link">
+    1.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2_3" class="md-nav__link">
+    2.
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cours_PYTHON/" class="md-nav__link">
+        Cours Python
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TD_TP_PYTHON/" class="md-nav__link">
+        TD Python
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TP_PYTHON/" class="md-nav__link">
+        TP
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+
+
+
+
+
+                
+<a href="https://github.com/Wenmad/Cours_INF1/tree/main/docs/TD_Algo.md" title="Editer cette page" class="md-content__button md-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+</a>
+
+
+  <h1>TD Algorithmique</h1>
+
+<div class="tabbed-set" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">TD 8</label><div class="tabbed-content">
+<h2 id="1">1.<a class="headerlink" href="#1" title="Permanent link">⚓︎</a></h2>
+<p>Trouver une définition récursive du PGCD de deux entiers et écrire l’algorithme correspondant.</p>
+<details class="abstract">
+<summary>Réponse</summary>
+<p>PGCD(A,B):
+    A, B : entiers</p>
+<div class="highlight"><pre><span></span><code>début
+    si A mod B = 0
+        alors
+            retourner B
+    sinon
+        retourner PGCD(B,A mod B)
+fin
+</code></pre></div>
+</details>
+<h2 id="2">2.<a class="headerlink" href="#2" title="Permanent link">⚓︎</a></h2>
+<p>Trouver un algorithme récursif permettant de calculer la puissance d’un nombre x^y. Attention : y pourra être éventuellement négatif</p>
+<p>(insérer image)</p>
+<details class="abstract">
+<summary>Réponse</summary>
+<p>Puissance(x,y):
+    x, y : réels</p>
+<div class="highlight"><pre><span></span><code>début
+    si y=0
+        alors
+            retourner 1
+    si y&gt;0
+        alors
+            retourner x*Puissance(x,y-1)
+        sinon
+            retourner (1/x)*Puissance(x,y+1)
+fin
+</code></pre></div>
+</details>
+<h2 id="3">3.<a class="headerlink" href="#3" title="Permanent link">⚓︎</a></h2>
+<p>Trouver un algorithme récursif permettant d’inverser une chaîne de caractères (‘NF01’ devient ‘10FN’, ‘bonjour’ devient ‘ruojnob’…).</p>
+<details class="abstract">
+<summary>Réponse</summary>
+<p>Inversion(S):
+    S : chaîne</p>
+<div class="highlight"><pre><span></span><code>début
+    si S=&quot; &quot;
+        alors
+            retourner S
+        sinon
+            retourner Inversion(copie(S,2,longueur(S)))+S[1]
+fin
+</code></pre></div>
+</details>
+<h2 id="4">4.<a class="headerlink" href="#4" title="Permanent link">⚓︎</a></h2>
+<p>En déduire un algorithme permettant d’indiquer si un mot est un palindrome (identique à l’endroit et à l’envers, par exemple : ‘noyon’ ou ‘rever’).</p>
+<details class="abstract">
+<summary>Réponse</summary>
+<p>Palindrome(S):
+    S : chaîne</p>
+<div class="highlight"><pre><span></span><code>début
+    si longueur(S)&lt;=1
+        alors
+            retourner Vrai
+        sinon
+            si S[1]=S[longueur[S]]
+                alors
+                    retourner Palindrome(copie(S,2,longueur(S)-1))
+                sinon
+                    retourner Faux
+fin
+</code></pre></div>
+</details>
+<h2 id="5">5.<a class="headerlink" href="#5" title="Permanent link">⚓︎</a></h2>
+<p>Ecrire une version récursive de l’algorithme de recherche dichotomique.</p>
+<details class="info">
+<summary>Recherche dichotomique</summary>
+<p>On rappelle que la recherche dichotomique est une recherche par approximations successives dans une liste ordonnée (triée par ordre croissant de ses valeurs). On compare l'élément recherché à celui situé en milieu de liste. S'il est plus grand, on recommence avec la moitié supérieure de la liste, sinon avec la moitié inférieure de la liste, jusqu'à convergence vers l'élément recherché (égalité = succès), ou jusqu'à ce qu'il n'y ait plus aucun élément à comparer (liste vide). Dans ce cas, l'élément recherché était absent de la liste. Ecrire un algorithme dichotomie permettant d'effectuer une recherche dichotomique dans un tableau de 100 entiers.</p>
+</details>
+<details class="abstract">
+<summary>Réponse</summary>
+<p>Dicho(T,val,d,f):
+    T : tableau
+    val : entier
+    d,f : entiers</p>
+<div class="highlight"><pre><span></span><code>début
+    si d &gt; f
+        alors
+            retourner 0
+        sinon
+            n &lt;--- (d+f)/2
+            si T[n] = val
+                alors
+                    retourner n
+                sinon
+                    si val&gt;T[n]
+                        alors
+                            retourner Dicho(T,val,n+1,f)
+                sinon
+                    retourner Dicho(T,val,d,n-1)
+fin
+</code></pre></div>
+</details>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">TD 9</label><div class="tabbed-content">
+<h2 id="1_1">1.<a class="headerlink" href="#1_1" title="Permanent link">⚓︎</a></h2>
+<p>Définir le type date permettant de représenter une date comportant le numéro du jour et le numéro du mois (14 7, 25 12, 31 12, ...).<br />
+Ecrire un algorithme jour_du _lendemain qui détermine la date du lendemain d’un jour donné. On supposera que l’année n’est pas bissextile.</p>
+<details class="abstract">
+<summary>Réponse</summary>
+<div class="highlight"><pre><span></span><code>date = enregistrement
+    jour : entier (1,31)
+    mois : entier (1,12)
+Algorithme jour_du_lendemain
+    variables : 
+        d1,d2 : date
+        max_j : entier
+    début
+        Afficher(&quot;Donnez une date : jour et mois)
+        lire(d1.jour,d1.mois)
+        si(d1.mois = 2)
+            alors
+                max_j &lt;--- 28
+            sinon si (d1.mois est dans [1,3,5,7,8,10,12])
+                alors
+                    max_j &lt;--- 31
+                sinon
+                    max_j &lt;--- 30
+        d2.jour &lt;--- d1.jour + 1
+        si (d2.jour &gt; max_j)
+            alors
+                d2.jour &lt;--- 1
+        si (d2.jour = 1)
+            alors
+                d2.mois &lt;--- d1.mois + 1
+                si (d2.mois = 13)
+                    alors
+                        d2.mois &lt;--- 1
+        sinon
+            d2.mois &lt;--- d1.mois
+        Afficher(&quot;Le jour suivant est&quot;, d2.jour, d2.mois)
+    fin
+</code></pre></div>
+</details>
+<p>Il faudrait compléter l'algorithme avec une fonction de vérification de la cohérence de la date</p>
+<h2 id="2_1">2.<a class="headerlink" href="#2_1" title="Permanent link">⚓︎</a></h2>
+<p>Un supermarché désire créer un tableau contenant la liste des prix de tous les articles disponibles en rayon. Ecrire un algorithme qui écrit dans un tableau la liste des articles avec leur prix (entrés au clavier). On désire ensuite calculer le prix moyen des articles en rayon. On aimerait, pour conclure, rechercher le nombre d'articles pour lesquels le prix est supérieur à un tarif entré par l'utilisateur. Par exemple, on voudrait savoir combien d'articles sont vendus à plus de 500 euros. </p>
+<details class="abstract">
+<summary>Réponse</summary>
+<div class="highlight"><pre><span></span><code>article = enregistrement
+    nom : chaîne
+    prix : réel
+Algorithme
+    variables :
+        i, N, Taille, nb : entier
+        S, Tarif : réel
+    début
+        #Saisie des articles
+        afficher (&quot;Combien y a-t-il d&#39;article ?&quot;)
+        lire (N)
+        T : tableau de N article           
+        i &lt;--- 0
+        répéter
+            i &lt;--- i + 1
+            afficher(&quot;Nom de l&#39;article :&quot;)
+            lire(T[i].nom)
+            afficher(&quot;Prix de l&#39;article :&quot;)
+            lire(T[i].prix)
+        tant que (T[i].prix &gt; 0 et i &lt;= N)
+        Taille &lt;--- i - 1
+
+        #Prix moyen
+        pour i variant de 1 à Taille 
+            S &lt;--- S + T[i].prix
+        afficher(&quot;Le prix moyen des articles est&quot;, S/Taille)
+
+        #Recher articles sup
+        afficher (&quot;Donnez un prix&quot;
+        lire(Tarif)
+        nb &lt;--- 0
+        pour i variant de 1 à Taille
+            si(T[i].prix &gt;= Tarif)
+                alors
+                    nb &lt;--- nb + 1
+        afficher(nb, &quot;articles dont le prix est supérieur ou égal au tarif entré&quot;)
+</code></pre></div>
+</details>
+<h2 id="3_1">3.<a class="headerlink" href="#3_1" title="Permanent link">⚓︎</a></h2>
+<p>On dispose d’un tableau d’enregistrements ayant la structure suivante : nom, prénom, âge.  </p>
+<p>a) Ecrire un algorithme avec un MENU permettant de proposer l’ensemble des actions à réaliser (cf liste ci-dessous). Une boucle sera effectuée jusqu’à ce que l’utilisateur ait choisi 0 pour sortir. L’algorithme vérifiera que le choix de l’utilisateur est un chiffre compris entre 0 et 6. Si ce n’est pas le cas, son choix lui sera demandé à nouveau.  </p>
+<details class="abstract">
+<summary>Réponse</summary>
+<div class="highlight"><pre><span></span><code>etudiant = enregistrement
+    nom : chaîne
+    prenom : chaîne
+    age : entier
+
+Algorithme MENU
+    variables
+        choix : entier
+    début
+        répéter
+            afficher(&quot;Tapez 1 : Stockage des informations des étudiants dans le tableau&quot;)
+            afficher(&quot;Tapez 2 : Afficher l’ensemble du tableau (liste de tous les étudiants)&quot;)
+            afficher(&quot;Tapez 3 : Ajout d’un étudiant&quot;)
+            afficher(&quot;Tapez 4 : Recherche d’un étudiant&quot;)
+            afficher(&quot;Tapez 5 : Suppression d’un étudiant&quot;)
+            afficher(&quot;Tapez 6 : Modification d’un étudiant&quot;)
+            afficher(&quot;Tapez 0 : Quitter&quot;)
+            répéter
+                afficher(&quot;Entrez votre choix&quot;)
+                lire(choix)
+            jusqu&#39;à (choix &gt;= 0 et choix &lt;= 6)
+        jusqu&#39;à choix = 0
+</code></pre></div>
+</details>
+<p>b) Ecrire les algorithmes pour réaliser les actions suivantes :<br />
+ 1. Stockage de l’ensemble des étudiants dans le tableau<br />
+ 2. Afficher l’ensemble du tableau (liste de tous les étudiants)<br />
+ 3. Ajout d’un étudiant<br />
+ 4. Recherche d’un étudiant<br />
+ 5. Suppression d’un étudiant<br />
+ 6. Modification d’un étudiant  </p>
+<details class="abstract">
+<summary>Algorithme de stockage</summary>
+<div class="highlight"><pre><span></span><code>Algorithme STOCKAGE
+    input
+        max : entier
+        T : tableau de max etudiant
+    variables
+        i, nb_etu : entier
+
+    début
+        répéter
+            afficher(&quot;Donner le nombre d&#39;étudiants&quot;)
+            lire(nb_etu)
+        jusqu&#39;à (nb_etu &gt; 0 et nb_etu &lt;= max)
+        pour i variant de 1 à nb_etu faire
+            afficher(&quot;Donnez le nom et le prénom&quot;)
+            lire(T[i].nom, T[i].prenom)
+            afficher(&quot;Donnez l&#39;âge&quot;)
+            lire(T[i].age)
+        retourner nb_etu
+    fin
+</code></pre></div>
+</details>
+<details class="abstract">
+<summary>Algorithme d'affichage</summary>
+<div class="highlight"><pre><span></span><code>Algorithme AFFICHAGE
+    input
+        max : entier
+        T : tableau de max etudiant
+        nb_etu : entier
+    variables
+        i : entier
+    début
+        pour i variant de 1 à nb_etu faire
+            afficher(&quot;Etudiant&quot;, i, &quot;:&quot;, T[i].nom, T[i].prenom, T[i].age)
+    fin
+</code></pre></div>
+</details>
+<details class="abstract">
+<summary>Algorithme d'ajout</summary>
+<div class="highlight"><pre><span></span><code>Algorithme AJOUT
+    input
+        max, nb_etu : entier
+        T : tableau de max etudiant
+    début
+        si nb_etu &lt; max
+            alors
+                nb_etu &lt;--- nb_etu + 1
+                afficher(&quot;Donnez le nom et le prénom&quot;)
+                lire(T[nb_etu].nom, T[nb_etu].prenom)
+                afficher(&quot;Donnez l&#39;âge&quot;)
+                lire(T[nb_etu].age)
+            sinon
+                afficher(&quot;Impossible d&#39;ajouter un étudiant&quot;)
+        retourner nb_etu
+    fin
+</code></pre></div>
+</details>
+<details class="abstract">
+<summary>Algorithme intermédiaire : RECHERCHE_indice</summary>
+<div class="highlight"><pre><span></span><code>Algoritme RECHERCHE_indice
+    input
+        max, nb_etu : entier
+        T : tableau de max etudiant
+        nom : chaîne
+        prenom : chaîne
+    variables
+            i : entier
+    début
+        i &lt;--- 1
+        tant que (i &lt;= nb_etu et (T[i].nom &lt;&gt; nom ou T[i].prenom &lt;&gt; prenom))
+            i &lt;--- i + 1
+        fin tant que
+        retourner i
+    fin
+</code></pre></div>
+</details>
+<details class="abstract">
+<summary>Algorithme de recherche</summary>
+<div class="highlight"><pre><span></span><code>Algorithme RECHERCHE
+    input
+        nb_etu, max : entier
+        T : tableau de max etudiant
+    variables
+        nom, prenom : chaîne
+        i : entier
+    début
+        afficher(&quot;Donnez le nom et le prénom à rechercher&quot;)
+        lire(nom, prenom)
+        i &lt;--- RECHERCHE_indice(nb_etu, max, T, nom, prenom)
+        si(i &gt; nb_etu)
+            alors
+                afficher(&quot;L&#39;étudiant n&#39;existe pas&quot;)
+            sinon
+                afficher(&quot;Nom : &quot;, T[i].nom, &quot;Prénom : &quot;, T[i].prenom, &quot;Âge : &quot;, T[i].age)
+    fin
+</code></pre></div>
+</details>
+<details class="abstract">
+<summary>Algorithme de Suppression</summary>
+<div class="highlight"><pre><span></span><code>Algorithme SUPRESSION
+    input
+        nb_etu, max : entier
+        T : tableau de max etudiant
+    variables
+        nom, prenom : chaîne
+        i : entier
+    début
+        afficher(&quot;Donnez le nom et le prénom à rechercher&quot;)
+        lire(nom, prenom)
+        i &lt;--- RECHERCHE_indice(nb_etu, max, T, nom, prenom)
+        si(i &gt; nb_etu)
+            alors
+                afficher(&quot;L&#39;étudiant n&#39;existe pas&quot;)
+            sinon
+                nb_etu = nb_etu - 1
+                pour j variant de i à nb_etu faire
+                    T[j] &lt;--- T[j+1]
+    fin
+</code></pre></div>
+</details>
+<details class="abstract">
+<summary>Algorithme de Modification</summary>
+<div class="highlight"><pre><span></span><code>Algorithme MODIFICATION
+    input
+        nb_etu, max : entier
+        T : tableau de max etudiant
+    variables
+        nom, prenom : chaîne
+        i : entier
+    début
+        afficher(&quot;Donnez le nom et le prénom à rechercher&quot;)
+        lire(nom, prenom)
+        i &lt;--- RECHERCHE_indice(nb_etu, max, T, nom, prenom)
+        si(i &gt; nb_etu)
+            alors
+                afficher(&quot;L&#39;étudiant n&#39;existe pas&quot;)
+            sinon
+                afficher(&quot;Donnez le nom et le prénom&quot;)
+                lire(T[i].nom, T[i].prenom)
+                afficher(&quot;Donnez l&#39;âge&quot;)
+                lire(T[i].age)
+    fin
+</code></pre></div>
+</details>
+<h2 id="4_1">4.<a class="headerlink" href="#4_1" title="Permanent link">⚓︎</a></h2>
+<p>On dispose d’un tableau dont chaque élément possède la structure suivante :</p>
+<div class="highlight"><pre><span></span><code>type Objet élève
+    nom : chaîne
+    prenom : chaîne
+    math : réel
+    physique : réel
+    français : réel
+</code></pre></div>
+<p>Ecrire un algorithme qui exploite ce tableau pour afficher la liste des étudiants avec leur note en Maths, en Physique, en Français, ainsi que leur moyenne.<br />
+Par exemple, nous pourrions avoir les informations suivantes :  <br />
+<img alt="Illustration" src="../images/TD9.png" title="Illustration" /></p>
+<p>On supposera que le nombre d’élèves est inférieur ou égal à 100.</p>
+<details class="abstract">
+<summary>Réponse</summary>
+<div class="highlight"><pre><span></span><code>eleve = enregistrement
+    nom : chaîne
+    prenom : chaîne
+    math : réel
+    physique : réel
+    français : réel
+Algorithme Affichage
+    Input
+        T : tableau de 100 eleve
+        nb_eleve : entier
+    variables
+        i : entier
+        M_M,M_P,M_F,moy : réel
+    début
+        M_M &lt;--- 0
+        M_P &lt;--- 0
+        M_F &lt;--- 0
+        afficher(&quot;Nom   Prénom  Math    Physique    Français    Moyenne&quot;)
+        afficher(&quot;__________________________________________&quot;)
+        pour i variant de 1 à nb_eleve faire
+            afficher(T[i].nom,&quot;    &quot;,T[i].prenom,&quot;    &quot;,T[i].math,&quot;   &quot;,T[i].physique,&quot;   &quot;,T[i].français,&quot;    &quot;,(T[i].math + T[i].physique + T[i].français)/3)
+            M_M &lt;--- M_M + T[i].math
+            M_P &lt;--- M_P + T[i].physique
+            M_F &lt;--- M_F + T[i].français
+        M_M &lt;--- M_M/nb_eleve
+        M_P &lt;--- M_P/nb_eleve
+        M_F &lt;--- M_F/nb_eleve
+        moy &lt;--- (M_M + M_P + M_F)/3
+        afficher(&quot;Moyenne    &quot;, M_M,&quot;    &quot;,M_P,&quot;    &quot;,M_F,&quot;    &quot;,moy)
+</code></pre></div>
+</details>
+</div>
+<input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">TD 10</label><div class="tabbed-content">
+<h2 id="1_2">1.<a class="headerlink" href="#1_2" title="Permanent link">⚓︎</a></h2>
+<p>On souhaite pouvoir gérer les amis de deux personnes données (associées à deux variables, A et B), sur le fameux réseau social « livre facial ». Le nombre maximum d’amis pris en compte est de 255. Un ami sera défini uniquement par un numéro, représentée par un entier. On aurait pu associer à ce numéro des caractéristiques associées, telles que nom, prénom, email, adresse, téléphone, mais nous ne vous le demandons pas (nous garderons donc simplement un numéro allant de 1 à 255, afin de simplifier le problème).
+On peut à tout moment ajouter de nouveaux amis, ou en supprimer, pour chacune des deux personnes A et B. Bref, cet ensemble d’amis évolue constamment.  </p>
+<p>1) Définir le type de données à utiliser et la déclaration de variables pour ce problème.</p>
+<details class="abstract">
+<summary>Réponse</summary>
+<div class="highlight"><pre><span></span><code>Num : 1,...,255
+AMIS : ensemble de num
+A,B : AMIS
+</code></pre></div>
+</details>
+<p>2) Ecrire un algorithme pour ajouter un ami à l’une des deux personnes, A ou B.</p>
+<details class="abstract">
+<summary>Réponse</summary>
+<p>Ajouter Num à un ensemble A ou B :
+x : ensemble (x=A ou x=B)</p>
+<div class="highlight"><pre><span></span><code>x &lt;--- x + [Num]
+</code></pre></div>
+<p>(algo à compléter)</p>
+</details>
+<p>3) Ecrire un algorithme permettant de supprimer un ami l’une des deux personnes, A ou B</p>
+<details class="abstract">
+<summary>Réponse</summary>
+<p>Supprimer Num d'un ensemble A ou B</p>
+<div class="highlight"><pre><span></span><code>x &lt;--- x - [Num]
+</code></pre></div>
+</details>
+<p>4) Réaliser un algorithme utilisée pour trouver les amis communs aux deux personnes A et B.</p>
+<details class="abstract">
+<summary>Réponse</summary>
+<div class="highlight"><pre><span></span><code>x &lt;--- A*B   #x est l&#39;intersection des deux ensembles
+</code></pre></div>
+<p>si l'on doit afficher :</p>
+<div class="highlight"><pre><span></span><code>pour i variant de 1 à 255 faire
+(compléter)
+</code></pre></div>
+</details>
+<p>5) Comment rechercher les amis d’une personne qui ne sont pas amis de l’autre ?</p>
+<details class="abstract">
+<summary>Réponse</summary>
+<div class="highlight"><pre><span></span><code>x &lt;--- A - B
+</code></pre></div>
+</details>
+<h2 id="2_2">2.<a class="headerlink" href="#2_2" title="Permanent link">⚓︎</a></h2>
+<p>On souhaite pouvoir gérer des commandes de pizzas, dans une micro entreprise gérée par deux jeunes auto entrepreneurs sympathiques, mais sans beaucoup de moyens (Camille et Léon). Il n’y a que 4 types de pizzas possibles : Margarita, Regina, Reine, et Calzone. Le nombre maximum de commandes prises en compte chaque jour est de 255. Une commande sera définie uniquement par un numéro, représentée par un entier. On aurait pu associer à ce numéro des caractéristiques associées, telles que nom, prénom, email, adresse, téléphone du client, mais nous ne vous le demandons pas (nous garderons donc simplement un numéro allant de 1 à 255, afin de simplifier le problème).<br />
+On peut à tout moment ajouter de nouvelles commandes, ou en supprimer, pour chacune des pizzas vendues par cette entreprise (Regina, Margarita, Reine et Calzone). Bref, cet ensemble de commandes évolue constamment, pour chaque type de pizzas. Un client pourra commander plusieurs types de pizzas lors d’une même commande (mais une seule pizza par type, le système ne sachant pas gérer le nombre d’exemplaires souhaités). Dans ce cas, le même numéro de commande sera utilisé pour chaque type de pizza.  </p>
+<p>1) Définir le type de données à utiliser et la déclaration de variables pour ce problème.</p>
+<details class="abstract">
+<summary>Réponse</summary>
+<div class="highlight"><pre><span></span><code>Num : 1,...,255
+COMMANDES : ensemble de Num
+Reg, Marg, Rei, Cal : COMMANDES
+</code></pre></div>
+</details>
+<p>2) Ecrire un algorithme pour ajouter une commande de pizza (Reine, Regina, Margarita, Calzone).</p>
+<details class="abstract">
+<summary>Réponse</summary>
+<div class="highlight"><pre><span></span><code>afficher(&quot;Donner le numéro de commande&quot;)
+lire(Num)
+afficher(&quot;Voulez-vous une regina, tapez O ou N&quot;)
+lire(rep)
+si rep = &quot;O&quot;
+    alors
+        Reg &lt;--- Reg + [Num]
+afficher(&quot;Voulez-vous une margarita, tapez O ou N&quot;)
+lire(rep)
+si rep = &quot;O&quot;
+    alors
+        Marg &lt;--- Marg + [Num]
+afficher(&quot;Voulez-vous une reine, tapez O ou N&quot;)
+lire(rep)
+si rep = &quot;O&quot;
+    alors
+        Rei &lt;--- Rei + [Num]
+afficher(&quot;Voulez-vous une calzone, tapez O ou N&quot;)
+lire(rep)
+si rep = &quot;O&quot;
+    alors
+        Cal &lt;--- Cal + [Num]
+
+(plus simple avec un tableau d&#39;ensemble et une boucle ...)
+</code></pre></div>
+</details>
+<p>3) Ecrire un algorithme permettant de supprimer une commande de pizza (Reine, Regina, …).</p>
+<details class="abstract">
+<summary>Réponse</summary>
+<div class="highlight"><pre><span></span><code>afficher(&quot;Donner le numéro&quot;)
+lire(Num)
+Reg &lt;--- Reg - [Num]
+Marg &lt;--- Marg - [Num]
+Rei &lt;--- Rei - [Num]
+Cal &lt;--- Cal - [Num]
+</code></pre></div>
+</details>
+<p>4) Ecrire un algorithme qui détermine l’ensemble des commandes dans lesquelles le client souhaite obtenir les 4 types de pizzas (même numéro de commande pour chacune des 4 pizzas).</p>
+<details class="abstract">
+<summary>Réponse</summary>
+<div class="highlight"><pre><span></span><code>X &lt;--- Marg * Reg * Rei * Cal
+pour i variant de 1 à 255
+    si i dans X
+        alors
+            afficher i
+</code></pre></div>
+</details>
+<p>5) Comment rechercher les commandes passées pour avoir des Reginas et des Margaritas mais pas des Reines ni des Calzones ?</p>
+<details class="abstract">
+<summary>Réponse</summary>
+<div class="highlight"><pre><span></span><code>X &lt;--- Marg * Reg - Rei - Cal
+</code></pre></div>
+</details>
+<h2 id="3_2">3.<a class="headerlink" href="#3_2" title="Permanent link">⚓︎</a></h2>
+<p>Vous partez en randonnée et votre sac à dos n’est toujours pas préparé. Vous avez développé un algorithme qui vous permet de contrôler le remplissage et le contenu de votre sac à dos.<br />
+Votre algorithme présente les fonctionnalités suivantes :  </p>
+<p>1)Les objets que vous pouvez mettre dans votre sac à dos sont : sac_couchage, chaussures, gourde, chaussettes, linge, pain. Donnez la définition d’un type ensemble « objets » composé de tous ces éléments.</p>
+<details class="abstract">
+<summary>Réponse</summary>
+<div class="highlight"><pre><span></span><code>objets : sac_couchage, chaussures, gourde, chaussettes, linge, pain
+liste_objets : ensemble d&#39;objets
+sac : liste_objets
+</code></pre></div>
+</details>
+<p>2) Donner un algorithme « remplir_sac ». Il vous permet de déposer des objets (parmi ceux définis dans « objets »). L’utilisateur peut arrêter ou continuer le remplissage du sac après avoir déposé un objet. Cet algorithme commence avec un sac vide et retourne un sac avec les objets déposés</p>
+<details class="abstract">
+<summary>Réponse</summary>
+<div class="highlight"><pre><span></span><code>remplir_sac :
+    Variables :
+        obj : objets
+        Sac : liste_objets
+        rep : chaîne
+    Début
+        sac &lt;--- []
+        répéter
+            afficher(&quot;Voulez-vous ajouter des objets dans le sac ? Tapez O ou N&quot;)
+            lire(rep)
+            Afficher(&quot;Indiquer l&#39;objet à ajouter&quot;)
+            lire(obj)
+            sac &lt;--- sac + [obj]
+        jusqu&#39;à rep = N
+        retourner sac
+    Fin
+</code></pre></div>
+<p>(différent de la correction à consulter)</p>
+</details>
+<p>3) Donner un algorithme « affiche_sac » qui affiche à l’écran les objets présents dans le sac à dos. </p>
+<details class="abstract">
+<summary>Réponse</summary>
+<div class="highlight"><pre><span></span><code>affiche_sac :
+    Variables :
+        i : objets
+    Début
+        afficher(&quot;Dans le sac il y a les objets suivants&quot;)
+        pour i variant dans liste_objets faire
+            si i dans sac
+                alors
+                    afficher(&quot;- &quot;, i)
+    Fin
+</code></pre></div>
+<p>(différent de la correction à consulter)</p>
+</details>
+<p>4) Donner un algorithme « vider_sac » qui permet de sortir un ou plusieurs objets du sac en fonction de votre demande et leur présence dans le sac. Cet algorithme commence avec un sac qui peut contenir des objets de l’ensemble « objets » et retourne le sac à dos sans les objets enlevés suivant le choix de l’utilisateur.         </p>
+<details class="abstract">
+<summary>Réponse</summary>
+<div class="highlight"><pre><span></span><code>vider_sac :
+    Variables :
+        rep : chaîne
+        obj : objets
+    Début
+        répéter
+            afficher(&quot;Voulez-vous retirer un objets du sac ? Tapez O ou N&quot;)
+            lire(rep)
+            afficher(&quot;Quel objet voulez-vous retirer ?&quot;)
+            lire(obj)
+            si obj dans sac
+                alors
+                    sac &lt;--- sac - [obj]
+                sinon
+                    afficher(&quot;Cet objet n&#39;est pas dans le sac à dos&quot;)
+        jusqu&#39;à rep = N
+    Fin
+</code></pre></div>
+<p>(différent de la correction à consulter)</p>
+</details>
+<h2 id="4_2">4.<a class="headerlink" href="#4_2" title="Permanent link">⚓︎</a></h2>
+<p>La FFD (Fédération Française de Danse) souhaite pouvoir gérer les inscriptions aux compétitions de danse sportive. Il y a deux sortes de danses :</p>
+<ul>
+<li>danses Latines (Samba, Cha Cha, Rumba, Paso Doble et Jive)</li>
+<li>danses Standards (Valse anglaise, Tango, Valse Viennoise, Slow Foxtrot et Quickstep).  </li>
+</ul>
+<p>Une manifestation sportive peut regrouper plusieurs compétitions (maximum 50), réparties par catégories d’âge (juvéniles, junior, youth, adultes, senior…) et des catégories de niveau : F, E, D, C, B, A, Open (toutes séries confondues). On a par exemple des compétitions en senior latines série B, open junior standards, adultes standards série C, Youth latines série E… <br />
+Chaque compétition est identifiée par un numéro, compris entre 1 et 50. Les danseurs sont inscrits par couples, identifiés par leur numéro de dossard. Pour simplifier le problème, nous supposerons qu’il n’y a que 120 couples maximum dans une même manifestation sportive (en réalité, il y en a beaucoup plus…). <br />
+Un couple est défini par son numéro de dossard, le nom et prénom du danseur et de la danseuse, leur classement national, leur classement international, l’adresse email du danseur et celle de la danseuse, leur série en danse standards et leur série en danses latines, leur catégorie d’âge…<br />
+Les Couples peuvent être inscrits à une ou à plusieurs compétitions (par exemple Adulte latines série C, Open adultes standards, Open adultes latines, Adultes standards série B…)<br />
+Bien entendu, une même compétition regroupe plusieurs couples (une centaine, au maximum).</p>
+<p>1) Définir le type de données à utiliser et les déclarations de variables pour ce problème.</p>
+<details class="abstract">
+<summary>Réponse</summary>
+<div class="highlight"><pre><span></span><code>Dossard : 1,...,120
+Couple : enregistrement
+    Num_doss : Dossard
+    Nom_danseur, Nom_danseuse,Prenom_danseur,Prenom_danseuse : chaîne de caractères
+    mail_danseur,mail_danseuse : chaîne de caractères
+    classement_nat : entier
+    classement_internat : entier
+    serie_standars : chaîne de caractères
+    serie_latine : chaîne de caractères
+    categ_age : chaîne de caractères
+Competition : enregistrement
+    Num : entier
+    categ_age : chaîne de caractères
+    serie : chaîne de caractaires
+    Inscrits : Ensemble de Dossard
+
+Variables :
+    danseurs : tableau[1,...,120] de Couple
+    Competitions : tableau[1,...,50] de Competition
+</code></pre></div>
+</details>
+<p>2) Ecrire un algorithme pour inscrire un couple (), à partir de son numéro de dossard) dans une compétition donnée (définie par son numéro)</p>
+<details class="abstract">
+<summary>Réponse</summary>
+<div class="highlight"><pre><span></span><code>Input :
+    C : Couple
+    Numero : Num de competition
+début
+    Competitions[Numero].Inscrits &lt;--- Competitions[Numero].Inscrits + [C.Num_doss]
+</code></pre></div>
+</details>
+<p>3) Ecrire un algorithme en PASCAL permettant de retirer un couple (pour cause de blessure, de désistement ou de disqualification) d’une compétition donnée, identifiée par son numéro. On utilisera son numéro de dossard du couple.</p>
+<details class="abstract">
+<summary>Réponse</summary>
+<div class="highlight"><pre><span></span><code>Input :
+    X : Num_doss du couple
+    Num : Num de la compétition
+début
+    Competitions[Num].Inscrits &lt;--- Competitions[Num].Inscrits - [X]
+</code></pre></div>
+</details>
+<p>4) Réaliser un algorithme en PASCAL pour rechercher le nom et prénom et adresse email des couples inscrits dans deux compétitions données. Par exemple, qui est à la fois en senior B latines (compétition n°5) et en Open senior Standards (compétitions n°36) ?</p>
+<details class="abstract">
+<summary>Réponse</summary>
+<div class="highlight"><pre><span></span><code>Input :
+    A,B : entier
+
+début :
+    X &lt;--- Competitions[A].Inscrits * Competitions[B].Inscrits
+    pour i variant de 1 à 120 faire
+        si i dans X
+            alors
+                afficher(&quot;Dossard :&quot;,i)
+                afficher(&quot;Nom danseur :&quot;, Danseurs[i].Nom_danseur)
+                afficher(&quot;Prénom danseur :&quot;, Danseurs[i].Prenom_danseur)
+                afficher(&quot;Nom danseuse :&quot;, Danseurs[i].Nom_danseuse)
+                afficher(&quot;Prénom danseuse :&quot;, Danseurs[i].Nom_danseuse)
+                afficher(&quot;Mail danseur :&quot;, Danseurs[i].mail_danseur)
+                afficher(&quot;Mail danseuse :&quot;, Danseurs[i].mail_danseuse)
+fin
+</code></pre></div>
+</details>
+<p>5) Ecrire un algorithme en PASCAL pour rechercher les couples (nom, prénom et adresse email) inscrits dans une compétition mais pas dans une autre. Par exemple, qui est en senior B latines (compétition n°5) mais pas en Open senior Standards (compétitions n°36) ?</p>
+<details class="abstract">
+<summary>Réponse</summary>
+<div class="highlight"><pre><span></span><code>Input :
+    A,B : entier
+
+début :
+    X &lt;--- Competitions[A].Inscrits - Competitions[B].Inscrits
+    pour i variant de 1 à 120 faire
+        si i dans X
+            alors
+                afficher(&quot;Dossard :&quot;,i)
+                afficher(&quot;Nom danseur :&quot;, Danseurs[i].Nom_danseur)
+                afficher(&quot;Prénom danseur :&quot;, Danseurs[i].Prenom_danseur)
+                afficher(&quot;Nom danseuse :&quot;, Danseurs[i].Nom_danseuse)
+                afficher(&quot;Prénom danseuse :&quot;, Danseurs[i].Nom_danseuse)
+                afficher(&quot;Mail danseur :&quot;, Danseurs[i].mail_danseur)
+                afficher(&quot;Mail danseuse :&quot;, Danseurs[i].mail_danseuse)
+fin
+</code></pre></div>
+</details>
+</div>
+<input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><label for="__tabbed_1_4">TD 11</label><div class="tabbed-content">
+<h2 id="1_3">1.<a class="headerlink" href="#1_3" title="Permanent link">⚓︎</a></h2>
+<p>Tri d’une liste de nombres. On dispose de N valeurs numériques rangées dans un tableau pouvant contenir MAX valeurs. Il s’agit de ranger par ordre croissant ces N valeurs, soit dans le même tableau, soit dans un autre tableau. Par exemple, si on dispose au départ des 6 valeurs 7, 3, 1, 2, 5, 4, ils devront être rangés à la fin dans l’ordre 1, 2, 3, 4, 5, 7. On utilisera un algorithme simple, appelé tri de sélection, que l’on peut décrire de la manière suivante :  </p>
+<p>On cherche le plus petit nombre et on le permute avec le nombre placé en première position, on cherche le plus petit des nombres restants et on le permute avec le nombre placé en seconde position,...  </p>
+<p>Avec notre exemple cela donnerait ceci :<br />
+<img alt="Illustration d'une photo instantané" src="../images/TD11.png" title="Illustration" /></p>
+<p>L’algorithme demandé aura la structure suivante : lecture d’un tableau d’entiers, tri de ce tableau et affichage des nombres ainsi triés.</p>
+<details class="abstract">
+<summary>Constantes</summary>
+<div class="highlight"><pre><span></span><code>Constantes :
+    MAX &lt;--- 100
+</code></pre></div>
+</details>
+<details class="abstract">
+<summary>Algorithme Saisie</summary>
+<div class="highlight"><pre><span></span><code>Algorithme Saisir(Tab:tableau d&#39;entiers):entier
+    variable :
+        i,n : entier
+    début
+        répéter
+            afficher(&quot;Donnez le nombre d&#39;éléments&quot;)
+            lire(n)
+        tant que n&lt;=0 ou n&gt;MAX
+        pour i variant de 1 à n faire
+            afficher(&quot;Donnez l&#39;élément n°&quot;, i)
+            lire(T[i])
+        retourner n
+    fin
+</code></pre></div>
+</details>
+<details class="abstract">
+<summary>Algorithme Affichage</summary>
+<div class="highlight"><pre><span></span><code>Algorithme Afficher(Tab:tableau d&#39;entiers, n:entier)
+    Variables :
+        i:entier
+    début
+        pour i variant de 1 à n faire
+            afficher(Tab[i])
+    fin
+</code></pre></div>
+</details>
+<details class="abstract">
+<summary>Algorithme de tri</summary>
+<div class="highlight"><pre><span></span><code>Algorithme Tri_Tableau(Tab:tableau d&#39;entiers,n:entier)
+    Variables:
+        i,j,indice_min,min:enier
+    début
+        pour i variant de 1 à n-1 faire
+            indice_min &lt;--- i
+            min &lt;--- Tab[i]
+            pour j variant de i+1 à n faire
+                si Tab[j] &lt; min
+                    alors
+                        indice_min &lt;--- j
+                        min &lt;--- Tab[j]
+            Tab[indice_min] &lt;--- Tab[i]
+            Tab[i] &lt;--- min
+    fin
+</code></pre></div>
+</details>
+<details class="abstract">
+<summary>Saisie, Tri et Affichage</summary>
+<div class="highlight"><pre><span></span><code>Algorithme Saisir_Trier_Afficher
+    Variables:
+        Tab : tableau d&#39;entiers
+        n : entier
+    début
+        n &lt;--- Saisir(Tab)
+        Tri_Tableau(Tab,n)
+        afficher(Tab,n)
+        fin
+</code></pre></div>
+</details>
+<h2 id="2_3">2.<a class="headerlink" href="#2_3" title="Permanent link">⚓︎</a></h2>
+<p>Tri d’une liste de chaînes de caractères. On souhaite à présent TRIER un tableau composé d’une liste de N noms ou prénoms de personnes de votre carnet d’adresses. Tous les noms et prénoms sont en MAJUSCULES non accentuées (rien en minuscule ou avec accents). On dispose d’un répertoire de max noms ou prénoms possibles (strings) rangés dans le tableau. Mais le nombre réel de données est N (avec N &lt; MAX). Il s’agit de ranger, dans le même tableau, par ordre croissant, ces valeurs, selon l’ordre alphabétique (ou ordre lexicographique), les noms commençant par ‘A’ en premier, et ceux commençant par ‘Z’ en dernier… Par exemple, si on dispose au départ des 6 valeurs ‘ALAIN’, ‘MARIE, ‘FRANCOIS’, ‘PHILIPPE’, ‘SAMUEL’, ‘GWENN’, elles devront être rangées à la fin dans l’ordre valeurs ‘ALAIN’, ‘FRANCOIS’, ‘GWENN’, ‘MARIE, ‘PHILIPPE’, ‘SAMUEL’. On utilisera un algorithme simple, appelé tri de sélection, qui a été décrit dans le précédent exercice.</p>
+<details class="abstract">
+<summary>Réponse</summary>
+<p>Algorithme 1. à adapter, faire attention aux &lt; selon le language de programmation</p>
+</details>
+</div>
+</div>
+
+              
+
+<style>
+    .jp-RenderedHTMLCommon p {
+        font-size: 0.8rem;
+        line-height: 1.6;
+    }
+
+    .jp-RenderedHTMLCommon li {
+        font-size: .8rem;
+        line-height: 1.6;
+    }
+
+    .jp-RenderedHTMLCommon h1 {
+        margin: 0 0 1.25em;
+        color: var(--md-default-fg-color--light);
+        font-weight: 300;
+        font-size: 2em;
+        line-height: 1.3;
+        letter-spacing: -0.01em;
+    }
+
+    .jp-RenderedHTMLCommon h2 {
+        margin: 1.6em 0 .64em;
+        font-weight: 300;
+        font-size: 1.965em;
+        line-height: 1.4;
+        letter-spacing: -0.01em;
+    }
+
+    .jp-RenderedHTMLCommon h3 {
+        margin: 1.6em 0 .8em;
+        font-weight: 400;
+        font-size: 1.57em;
+        line-height: 1.5;
+        letter-spacing: -0.01em;
+    }
+
+    .jp-RenderedHTMLCommon hr {
+        border: none;
+    }
+</style>
+
+
+
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Retour en haut de la page
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Pied de page">
+      
+        
+        <a href="../Cours_Algo/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Cours Algorithmique" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Précédent
+              </span>
+              Cours Algorithmique
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../Cours_PYTHON/" class="md-footer__link md-footer__link--next" aria-label="Suivant: Cours Python" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Suivant
+              </span>
+              Cours Python
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Document partagé par <a href="https://github.com/Wenmad" target="_blank">NewCesam</a> &copy; 2021 sous licence <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr" target="_blank">CC BY-NC-SA 4.0</a> <br> Illustrations par <a href="https://undraw.co/" target="_blank">UnDraw</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    <a href="mailto:newcesam@gmail.com" target="_blank" rel="noopener" title="Pour toute question, suggestion ou commentaire, écrire à l&#39;auteur" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M476 3.2 12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"/></svg>
+    </a>
+  
+    
+    
+    <a href="https://github.com/Wenmad/Cours_INF1" target="_blank" rel="noopener" title="dépôt github" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    <a href="https://www.utc.fr/" target="_blank" rel="noopener" title="UTC" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M496 128v16a8 8 0 0 1-8 8h-24v12c0 6.627-5.373 12-12 12H60c-6.627 0-12-5.373-12-12v-12H24a8 8 0 0 1-8-8v-16a8 8 0 0 1 4.941-7.392l232-88a7.996 7.996 0 0 1 6.118 0l232 88A8 8 0 0 1 496 128zm-24 304H40c-13.255 0-24 10.745-24 24v16a8 8 0 0 0 8 8h464a8 8 0 0 0 8-8v-16c0-13.255-10.745-24-24-24zM96 192v192H60c-6.627 0-12 5.373-12 12v20h416v-20c0-6.627-5.373-12-12-12h-36V192h-64v192h-64V192h-64v192h-64V192H96z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tabs", "navigation.expand", "navigation.top", "toc.integrate", "header.autohide"], "translations": {"clipboard.copy": "Copier dans le presse-papier", "clipboard.copied": "Copi\u00e9 dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}, "search": "../assets/javascripts/workers/search.b6ff8c07.min.js"}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.5e13d264.min.js"></script>
+      
+        <script src="../javascripts/config.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
