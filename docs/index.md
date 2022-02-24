@@ -25,4 +25,30 @@ regardez y a presque rien !
 ça veut dire que vous avez mal réfléchi au départ, vous êtes en train de perdre du temps là c'est pas normal.  
 le magret n'est pas très frais  
 Parfois les suggestions c'est économique  
-Le plus important c'est de bien dormir et de bien manger
+Le plus important c'est de bien dormir et de bien manger  
+  
+  
+
+Véronique Cherfaoui
+veronique.cherfaoui@utc.fr     
+
+6 groupes de TD/TP  
+
+Evaluation : 
+
+- TP      30%
+- Médian  30%
+- Final   40% (Note éliminatoire < 6)
+
+Rappels de Python :  
+Un langage interprêté (=\compilé), de nombreuses biblio, adapté au prototypage, typage dynamique  
+  
+Ecriture d'un programme :  
+main() est le programme principal  
+
+    def main():
+        |
+        corps de la fonction
+        |
+    if __name__ == '__main__':
+        main()
